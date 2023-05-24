@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>wic_server_icon.png</file>
+    </qresource>
+</RCC>
