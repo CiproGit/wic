@@ -19,6 +19,11 @@ file(GLOB SOURCES src/*.cpp src/*.ui)
 file(GLOB HEADERS include/*.h)
 set(RESOURCES res/resources.qrc)
 
-add_executable(client WIN32 ${SOURCES} ${HEADERS} ${RESOURCES})
+if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+    enable_language("RC")
+    set(WIN32_RESOURCES res/resources.rc)
+endif()
+
+add_executable(client WIN32 ${SOURCES} ${HEADERS} ${RESOURCES} ${WIN32_RESOURCES})
 
 target_link_libraries(client PRIVATE Qt6::Gui Qt6::Widgets Qt6::Network)
