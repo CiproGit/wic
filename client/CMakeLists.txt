@@ -24,6 +24,11 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
     set(WIN32_RESOURCES res/resources.rc)
 endif()
 
-add_executable(client WIN32 ${SOURCES} ${HEADERS} ${RESOURCES} ${WIN32_RESOURCES})
+add_executable(client ${SOURCES} ${HEADERS} ${RESOURCES} ${WIN32_RESOURCES})
 
 target_link_libraries(client PRIVATE Qt6::Gui Qt6::Widgets Qt6::Network)
+
+set_target_properties(client PROPERTIES
+    WIN32_EXECUTABLE ON
+    MACOSX_BUNDLE ON
+)
