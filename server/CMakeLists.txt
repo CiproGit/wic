@@ -17,14 +17,24 @@ include_directories(include)
 
 file(GLOB SOURCES src/*.cpp src/*.ui)
 file(GLOB HEADERS include/*.h)
-set(RESOURCES res/resources.qrc)
+set(RESOURCES res/resources.qrc) # Set Qt resources
 
+# Set Windows resources
 if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
     enable_language("RC")
     set(WIN32_RESOURCES res/resources.rc)
 endif()
 
-add_executable(server ${SOURCES} ${HEADERS} ${RESOURCES} ${WIN32_RESOURCES})
+# Set Mac OS resources
+if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    set(MACOSX_BUNDLE_ICON_FILE wic_server_icon.icns)
+    set(MACOSX_RESOURCES res/wic_server_icon.icns)
+    set_source_files_properties(${MACOSX_RESOURCES} PROPERTIES
+	MACOSX_PACKAGE_LOCATION "Resources"
+    )
+endif()
+
+add_executable(server ${SOURCES} ${HEADERS} ${RESOURCES} ${WIN32_RESOURCES} ${MACOSX_RESOURCES})
 
 target_link_libraries(server PRIVATE Qt6::Gui Qt6::Widgets Qt6::Network)
 
