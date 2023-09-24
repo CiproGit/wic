@@ -39,6 +39,7 @@ add_executable(client ${SOURCES} ${HEADERS} ${RESOURCES} ${WIN32_RESOURCES} ${MA
 target_link_libraries(client PRIVATE Qt6::Gui Qt6::Widgets Qt6::Network)
 
 set_target_properties(client PROPERTIES
+    OUTPUT_NAME "WIC client"
     WIN32_EXECUTABLE ON
     MACOSX_BUNDLE ON
 )

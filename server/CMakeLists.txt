@@ -39,6 +39,7 @@ add_executable(server ${SOURCES} ${HEADERS} ${RESOURCES} ${WIN32_RESOURCES} ${MA
 target_link_libraries(server PRIVATE Qt6::Gui Qt6::Widgets Qt6::Network)
 
 set_target_properties(server PROPERTIES
+    OUTPUT_NAME "WIC server"
     WIN32_EXECUTABLE ON
     MACOSX_BUNDLE ON
 )
