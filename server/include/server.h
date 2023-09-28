@@ -2,12 +2,10 @@
 #define SERVER_H
 
 #include "mainwindow.h"
+#include "common.h"
 #include <QObject>
 #include <QTcpServer>
 #include <QTcpSocket>
-
-const QString DEFAULT_IP_ADDRESS = "127.0.0.1";
-const QString DEFAULT_PORT = "50000";
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

@@ -2,13 +2,9 @@
 #define CLIENT_H
 
 #include "mainwindow.h"
+#include "common.h"
 #include <QObject>
 #include <QTcpSocket>
-
-const QString DEFAULT_PORT = "50000";
-const QString DEFAULT_TIMEOUT = "30000";
-
-const QString SERVER_LIST_FILE = "./server_list.txt";
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,6 +22,8 @@ private:
 	int number_of_servers; // Total number of servers in SERVER_LIST_FILE
 	QList<QString> ip_address_list; // IP address of each server
 	QList<QTcpSocket *> socket_list; // One socket for each server
+
+	const QString SERVER_LIST_FILE = WORKING_DIR + "/server_list.txt";
 
 	void read_from_file();
 
