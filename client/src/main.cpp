@@ -5,9 +5,9 @@
 
 using namespace std;
 
-const QString CONFIG_FILE = "./client_config.ini";
-
 int main(int argc, char *argv[]) {
+	const QString CONFIG_FILE = WORKING_DIR + "/client_config.ini";
+
 	QApplication a(argc, argv);
 	MainWindow w;
 	w.show();

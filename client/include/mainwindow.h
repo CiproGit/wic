@@ -4,8 +4,6 @@
 #include "about.h"
 #include <QMainWindow>
 
-const QString ICON_FILE = ":/wic_client_icon.png";
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -16,6 +14,8 @@ class MainWindow : public QMainWindow {
 private:
 	Ui::MainWindow *ui;
 	About about;
+
+	const QString ICON_FILE = ":/wic_client_icon.png";
 
 public:
 	MainWindow(QWidget *parent = nullptr);
