@@ -42,6 +42,12 @@ endif()
 
 add_executable(client ${SOURCES} ${HEADERS} ${RESOURCES} ${WIN32_RESOURCES} ${MACOSX_RESOURCES})
 
+# Set config header file
+configure_file(config.h.in config.h)
+target_include_directories(client PUBLIC
+    "${PROJECT_BINARY_DIR}"
+)
+
 target_link_libraries(client PRIVATE Qt6::Gui Qt6::Widgets Qt6::Network)
 
 set_target_properties(client PROPERTIES
