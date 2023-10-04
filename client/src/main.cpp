@@ -1,23 +1,16 @@
 #include "mainwindow.h"
+#include "program_setup.h"
 #include "client.h"
 #include <QApplication>
-#include <QSettings>
-
-using namespace std;
 
 int main(int argc, char *argv[]) {
-	const QString CONFIG_FILE = WORKING_DIR + "/client_config.ini";
-
 	QApplication a(argc, argv);
 	MainWindow w;
 	w.show();
 
-	// Read port and timeout from settings file
-	QSettings settings(CONFIG_FILE, QSettings::IniFormat);
-	unsigned short port = static_cast<unsigned short>(settings.value("CLIENT/PORT", DEFAULT_PORT).toUInt());
-	unsigned short timeout = static_cast<unsigned short>(settings.value("CLIENT/TIMEOUT", DEFAULT_TIMEOUT).toUInt());
+	Program_setup program_setup;
 
-	Client client(&w, port, timeout);
+	Client client(&w, program_setup.get_port(), program_setup.get_timeout(), program_setup.get_working_dir());
 	client.send_request();
 
 	return a.exec();

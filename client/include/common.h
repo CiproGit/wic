@@ -3,9 +3,6 @@
 
 #include <QString>
 
-extern const QString DEFAULT_PORT;
-extern const QString DEFAULT_TIMEOUT;
-
-extern const QString WORKING_DIR;
+extern const QString FILE_PATH;
 
 #endif // COMMON_H

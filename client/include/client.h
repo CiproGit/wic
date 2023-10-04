@@ -2,7 +2,6 @@
 #define CLIENT_H
 
 #include "mainwindow.h"
-#include "common.h"
 #include <QObject>
 #include <QTcpSocket>
 
@@ -23,12 +22,12 @@ private:
 	QList<QString> ip_address_list; // IP address of each server
 	QList<QTcpSocket *> socket_list; // One socket for each server
 
-	const QString SERVER_LIST_FILE = WORKING_DIR + "/server_list.txt";
+	const QString SERVER_LIST_FILE = "server_list.txt";
 
-	void read_from_file();
+	void read_from_file(QString working_dir);
 
 public:
-	Client(MainWindow *window, unsigned short port, int timeout);
+	Client(MainWindow *window, unsigned short port, int timeout, QString working_dir);
 	virtual ~Client();
 	unsigned short get_port() const;
 	int get_timeout() const;

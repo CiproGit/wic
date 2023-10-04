@@ -38,7 +38,7 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 	MACOSX_PACKAGE_LOCATION "Resources"
     )
 
-    add_compile_definitions(OUTSIDE_BUNDLE="../../..") # Path outside the Mac OS bundle
+    add_compile_definitions(OUTSIDE_BUNDLE="/../../../") # Path outside the Mac OS bundle
 
     set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0") # Set minimum target to Mac OS Big Sur
 endif()

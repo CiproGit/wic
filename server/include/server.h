@@ -2,7 +2,6 @@
 #define SERVER_H
 
 #include "mainwindow.h"
-#include "common.h"
 #include <QObject>
 #include <QTcpServer>
 #include <QTcpSocket>
@@ -25,9 +24,9 @@ private:
 	QString username;
 
 public:
-	Server(MainWindow *window, unsigned short port);
+	Server(MainWindow *window, QString ip_address, unsigned short port);
 	virtual ~Server();
-	void start_listening(QString ip_address);
+	void start_listening();
 
 public slots:
 	void on_newConnection();
