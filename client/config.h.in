@@ -1,0 +1,8 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define VERSION_MAJOR @client_VERSION_MAJOR@
+#define VERSION_MINOR @client_VERSION_MINOR@
+#define VERSION_PATCH @client_VERSION_PATCH@
+
+#endif // CONFIG_H

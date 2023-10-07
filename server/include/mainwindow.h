@@ -6,8 +6,6 @@
 #include <QSystemTrayIcon>
 #include <QCloseEvent>
 
-const QString ICON_FILE = ":/wic_server_icon.png";
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -19,6 +17,8 @@ private:
 	Ui::MainWindow *ui;
 	QSystemTrayIcon tray_icon;
 	About about;
+
+	const QString ICON_FILE = ":/wic_server_icon.png";
 
 private slots:
 	void iconActivated(QSystemTrayIcon::ActivationReason reason);

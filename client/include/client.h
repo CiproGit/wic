@@ -5,11 +5,6 @@
 #include <QObject>
 #include <QTcpSocket>
 
-const QString DEFAULT_PORT = "50000";
-const QString DEFAULT_TIMEOUT = "30000";
-
-const QString SERVER_LIST_FILE = "./server_list.txt";
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -27,10 +22,12 @@ private:
 	QList<QString> ip_address_list; // IP address of each server
 	QList<QTcpSocket *> socket_list; // One socket for each server
 
-	void read_from_file();
+	const QString SERVER_LIST_FILE = "server_list.txt";
+
+	void read_from_file(QString working_dir);
 
 public:
-	Client(MainWindow *window, unsigned short port, int timeout);
+	Client(MainWindow *window, unsigned short port, int timeout, QString working_dir);
 	virtual ~Client();
 	unsigned short get_port() const;
 	int get_timeout() const;

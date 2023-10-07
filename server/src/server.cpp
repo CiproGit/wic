@@ -4,10 +4,10 @@
 
 using namespace std;
 
-Server::Server(MainWindow *window, unsigned short port) {
+Server::Server(MainWindow *window, QString ip_address, unsigned short port) {
 	this->window = window;
 
-	this->ip_address = DEFAULT_IP_ADDRESS;
+	this->ip_address = ip_address;
 	this->port = port;
 
 	connect(&this->server, SIGNAL(newConnection()), this, SLOT(on_newConnection()));
@@ -28,9 +28,7 @@ Server::~Server() {
 	this->server.close();
 }
 
-void Server::start_listening(QString ip_address) {
-	this->ip_address = ip_address;
-
+void Server::start_listening() {
 	this->window->print_settings("IP address: " + this->ip_address);
 	this->window->print_settings("Port: " + QString::number(this->port));
 

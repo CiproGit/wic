@@ -1,4 +1,5 @@
 #include "client.h"
+#include "common.h"
 #include "sender_thread.h"
 #include <QHostAddress>
 #include <QNetworkInterface>
@@ -6,7 +7,7 @@
 
 using namespace std;
 
-Client::Client(MainWindow *window, unsigned short port,  int timeout) {
+Client::Client(MainWindow *window, unsigned short port,  int timeout, QString working_dir) {
 	this->window = window;
 
 	this->port = port;
@@ -15,7 +16,7 @@ Client::Client(MainWindow *window, unsigned short port,  int timeout) {
 	this->window->print_settings("Port: " + QString::number(this->port));
 	this->window->print_settings("Timeout: " + QString::number(this->timeout) + " ms\n");
 
-	read_from_file();
+	read_from_file(working_dir);
 
 	this->window->set_progressbar(this->number_of_servers);
 
@@ -51,10 +52,10 @@ QList<QTcpSocket *> Client::get_socket_list() const {
 	return this->socket_list;
 }
 
-void Client::read_from_file() {
+void Client::read_from_file(QString working_dir) {
 	this->number_of_servers = 0;
 
-	QFile file(SERVER_LIST_FILE);
+	QFile file(working_dir + FILE_PATH + SERVER_LIST_FILE);
 	if (file.open(QIODevice::ReadOnly)) {
 		QTextStream in(&file);
 

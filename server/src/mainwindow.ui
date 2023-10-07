@@ -10,8 +10,13 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Helvetica</family>
+   </font>
+  </property>
   <property name="windowTitle">
-   <string>WIC server</string>
+   <string>WIC Server</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -32,6 +37,7 @@
             <widget class="QPlainTextEdit" name="ip_textedit">
              <property name="font">
               <font>
+               <family>Helvetica</family>
                <pointsize>10</pointsize>
               </font>
              </property>
@@ -53,6 +59,7 @@
             <widget class="QLineEdit" name="username_lineedit">
              <property name="font">
               <font>
+               <family>Helvetica</family>
                <pointsize>10</pointsize>
               </font>
              </property>
@@ -74,6 +81,7 @@
             <widget class="QPlainTextEdit" name="settings_textedit">
              <property name="font">
               <font>
+               <family>Helvetica</family>
                <pointsize>10</pointsize>
               </font>
              </property>
@@ -100,6 +108,7 @@
           <widget class="QTextBrowser" name="console_textbrowser">
            <property name="font">
             <font>
+             <family>Helvetica</family>
              <pointsize>10</pointsize>
             </font>
            </property>
@@ -118,7 +127,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -135,10 +144,20 @@
    <property name="text">
     <string>About</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Helvetica</family>
+    </font>
+   </property>
   </action>
   <action name="hide_action">
    <property name="text">
     <string>Hide</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Helvetica</family>
+    </font>
    </property>
   </action>
  </widget>

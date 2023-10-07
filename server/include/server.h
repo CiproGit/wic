@@ -6,9 +6,6 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 
-const QString DEFAULT_IP_ADDRESS = "127.0.0.1";
-const QString DEFAULT_PORT = "50000";
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -27,9 +24,9 @@ private:
 	QString username;
 
 public:
-	Server(MainWindow *window, unsigned short port);
+	Server(MainWindow *window, QString ip_address, unsigned short port);
 	virtual ~Server();
-	void start_listening(QString ip_address);
+	void start_listening();
 
 public slots:
 	void on_newConnection();
