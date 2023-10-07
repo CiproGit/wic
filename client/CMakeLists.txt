@@ -50,7 +50,7 @@ configure_file(config.h.in config.h) # Set config header file
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Gui Qt6::Widgets Qt6::Network)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
-    OUTPUT_NAME "WIC client"
+    OUTPUT_NAME "WIC Client"
     WIN32_EXECUTABLE TRUE
     MACOSX_BUNDLE TRUE
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}

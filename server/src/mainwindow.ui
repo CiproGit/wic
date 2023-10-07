@@ -16,7 +16,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>WIC server</string>
+   <string>WIC Server</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_7">

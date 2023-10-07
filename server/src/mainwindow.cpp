@@ -35,7 +35,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 		event->ignore(); // Do not terminate the program
 		this->hide();
 
-		this->tray_icon.showMessage("WIC server", "Hidden");
+		this->tray_icon.showMessage("WIC Server", "Hidden");
 	}
 }
 
