@@ -12,7 +12,7 @@ Program_setup::Program_setup() {
 	this->timeout = static_cast<unsigned short>(settings.value("CLIENT/TIMEOUT", DEFAULT_TIMEOUT).toUInt());
 }
 
-Program_setup::~Program_setup() {}
+Program_setup::~Program_setup() = default;
 
 QString Program_setup::get_working_dir() const {
 	return this->working_dir;

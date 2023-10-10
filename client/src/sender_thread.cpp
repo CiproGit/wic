@@ -5,7 +5,7 @@ Sender_thread::Sender_thread(MainWindow *window, const Client *client) {
 	this->client = client;
 }
 
-Sender_thread::~Sender_thread() {}
+Sender_thread::~Sender_thread() = default;
 
 void Sender_thread::run() {
 	if (this->client->get_number_of_servers() >= 1) {
