@@ -12,7 +12,7 @@ Program_setup::Program_setup() {
 	this->port = static_cast<unsigned short>(settings.value("SERVER/PORT", DEFAULT_PORT).toUInt());
 }
 
-Program_setup::~Program_setup() {}
+Program_setup::~Program_setup() = default;
 
 QString Program_setup::get_ip_address() const {
 	return this->ip_address;
