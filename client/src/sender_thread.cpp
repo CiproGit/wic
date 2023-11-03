@@ -1,6 +1,6 @@
 #include "sender_thread.h"
 
-Sender_thread::Sender_thread(MainWindow *window, const Client *client) {
+Sender_thread::Sender_thread(Main_window *window, const Client *client) {
 	this->window = window;
 	this->client = client;
 }

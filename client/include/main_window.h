@@ -1,25 +1,25 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef MAIN_WINDOW_H
+#define MAIN_WINDOW_H
 
 #include "about.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui { class Main_window; }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow {
+class Main_window : public QMainWindow {
 	Q_OBJECT
 
 private:
-	Ui::MainWindow *ui;
+	Ui::Main_window *ui;
 	About about;
 
 	const QString ICON_FILE = ":/wic_client_icon.png";
 
 public:
-	MainWindow(QWidget *parent = nullptr);
-	~MainWindow();
+	Main_window(QWidget *parent = nullptr);
+	~Main_window();
 	void set_progressbar(int max) const; // It sets the maximum value of the progressbar with the given max
 	void update_progressbar(int progress) const;
 	void print_settings(QString string) const; // It appends the given string in the settings panel
@@ -28,4 +28,4 @@ public:
 public slots:
 	void show_about();
 };
-#endif // MAINWINDOW_H
+#endif // MAIN_WINDOW_H

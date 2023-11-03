@@ -7,7 +7,7 @@
 
 using namespace std;
 
-Client::Client(MainWindow *window, unsigned short port,  int timeout, QString working_dir) {
+Client::Client(Main_window *window, unsigned short port,  int timeout, QString working_dir) {
 	this->window = window;
 
 	this->port = port;

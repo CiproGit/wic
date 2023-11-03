@@ -5,7 +5,7 @@
 #include <QString>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui { class Main_window; }
 QT_END_NAMESPACE
 
 class Program_setup : public QObject {

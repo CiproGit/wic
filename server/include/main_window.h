@@ -1,5 +1,5 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef MAIN_WINDOW_H
+#define MAIN_WINDOW_H
 
 #include "about.h"
 #include <QMainWindow>
@@ -7,14 +7,14 @@
 #include <QCloseEvent>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui { class Main_window; }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow {
+class Main_window : public QMainWindow {
 	Q_OBJECT
 
 private:
-	Ui::MainWindow *ui;
+	Ui::Main_window *ui;
 	QSystemTrayIcon tray_icon;
 	About about;
 
@@ -27,8 +27,8 @@ protected:
 	void closeEvent(QCloseEvent *event);
 
 public:
-	MainWindow(QWidget *parent = nullptr);
-	~MainWindow();
+        Main_window(QWidget *parent = nullptr);
+        ~Main_window();
 	void print_ip_addresses(QString string) const; // It appends the given string in the IP addresses panel
 	void print_username(QString string) const; // It prints the given string in the username panel
 	void print_settings(QString string) const; // It appends the given string in the settings panel
@@ -38,4 +38,4 @@ public slots:
 	void show_about();
 	void quit();
 };
-#endif // MAINWINDOW_H
+#endif // MAIN_WINDOW_H

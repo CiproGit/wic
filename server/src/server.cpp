@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Server::Server(MainWindow *window, QString ip_address, unsigned short port) {
+Server::Server(Main_window *window, QString ip_address, unsigned short port) {
 	this->window = window;
 
 	this->ip_address = ip_address;

@@ -1,11 +1,11 @@
-#include "mainwindow.h"
+#include "main_window.h"
 #include "program_setup.h"
 #include "client.h"
 #include <QApplication>
 
 int main(int argc, char *argv[]) {
 	QApplication a(argc, argv);
-	MainWindow w;
+	Main_window w;
 	w.show();
 
 	Program_setup program_setup;

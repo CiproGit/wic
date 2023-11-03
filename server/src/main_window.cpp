@@ -1,8 +1,8 @@
-#include "mainwindow.h"
-#include "./ui_mainwindow.h"
+#include "main_window.h"
+#include "./ui_main_window.h"
 #include <QIcon>
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
+Main_window::Main_window(QWidget *parent) : QMainWindow(parent), ui(new Ui::Main_window) {
 	ui->setupUi(this);
 	this->setWindowIcon(QIcon(ICON_FILE));
 	this->tray_icon.setIcon(QIcon(ICON_FILE));
@@ -26,11 +26,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 	connect(ui->hide_action, SIGNAL(triggered()), this, SLOT(close()));
 }
 
-MainWindow::~MainWindow() {
+Main_window::~Main_window() {
 	delete ui;
 }
 
-void MainWindow::closeEvent(QCloseEvent *event) {
+void Main_window::closeEvent(QCloseEvent *event) {
 	if (this->isVisible()) {
 		event->ignore(); // Do not terminate the program
 		this->hide();
@@ -39,7 +39,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 	}
 }
 
-void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason) {
+void Main_window::iconActivated(QSystemTrayIcon::ActivationReason reason) {
 	switch(reason) {
 		case QSystemTrayIcon::Trigger:
 			if (!this->isVisible()) this->show();
@@ -50,26 +50,26 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason) {
 	}
 }
 
-void MainWindow::print_ip_addresses(QString string) const {
+void Main_window::print_ip_addresses(QString string) const {
 	ui->ip_textedit->appendPlainText(string);
 }
 
-void MainWindow::print_username(QString string) const {
+void Main_window::print_username(QString string) const {
 	ui->username_lineedit->setText(string);
 }
 
-void MainWindow::print_settings(QString string) const{
+void Main_window::print_settings(QString string) const{
 	ui->settings_textedit->appendPlainText(string);
 }
 
-void MainWindow::print_console(QString string) const {
+void Main_window::print_console(QString string) const {
 	ui->console_textbrowser->append(string);
 }
 
-void MainWindow::show_about() {
+void Main_window::show_about() {
 	this->about.show();
 }
 
-void MainWindow::quit() {
+void Main_window::quit() {
 	QCoreApplication::exit();
 }

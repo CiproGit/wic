@@ -1,19 +1,19 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
-#include "mainwindow.h"
+#include "main_window.h"
 #include <QObject>
 #include <QTcpSocket>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui { class Main_window; }
 QT_END_NAMESPACE
 
 class Client : public QObject {
 	Q_OBJECT
 
 private:
-	MainWindow *window; // Client GUI
+    Main_window *window; // Client GUI
 
 	unsigned short port;
 	int timeout;
@@ -27,7 +27,7 @@ private:
 	void read_from_file(QString working_dir);
 
 public:
-	Client(MainWindow *window, unsigned short port, int timeout, QString working_dir);
+        Client(Main_window *window, unsigned short port, int timeout, QString working_dir);
 	virtual ~Client();
 	unsigned short get_port() const;
 	int get_timeout() const;

@@ -2,18 +2,18 @@
 #define SENDER_THREAD_H
 
 #include "client.h"
-#include "mainwindow.h"
+#include "main_window.h"
 #include <QThread>
 
 class Sender_thread : public QThread {
 	Q_OBJECT
 
 private:
-	MainWindow *window; // Client GUI
+    Main_window *window; // Client GUI
 	const Client *client;
 
 public:
-	Sender_thread(MainWindow *window, const Client *client);
+        Sender_thread(Main_window *window, const Client *client);
 	virtual ~Sender_thread() override;
 	void run() override;
 

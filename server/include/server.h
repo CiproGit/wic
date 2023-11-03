@@ -1,20 +1,20 @@
 #ifndef SERVER_H
 #define SERVER_H
 
-#include "mainwindow.h"
+#include "main_window.h"
 #include <QObject>
 #include <QTcpServer>
 #include <QTcpSocket>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui { class Main_window; }
 QT_END_NAMESPACE
 
 class Server : public QObject {
 	Q_OBJECT
 
 private:
-	MainWindow *window; // Server GUI
+    Main_window *window; // Server GUI
 
 	QString ip_address;
 	unsigned short port;
@@ -24,7 +24,7 @@ private:
 	QString username;
 
 public:
-	Server(MainWindow *window, QString ip_address, unsigned short port);
+        Server(Main_window *window, QString ip_address, unsigned short port);
 	virtual ~Server();
 	void start_listening();
 
