@@ -1,10 +1,10 @@
 #include "main_window.h"
-#include "./ui_main_window.h"
+#include "ui_main_window.h"
 #include <QIcon>
 
 Main_window::Main_window(QWidget *parent) : QMainWindow(parent), ui(new Ui::Main_window) {
 	ui->setupUi(this);
-	this->setWindowIcon(QIcon(ICON_FILE));
+
 	this->tray_icon.setIcon(QIcon(ICON_FILE));
 
 	// Tray icon menu
