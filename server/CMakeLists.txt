@@ -11,7 +11,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 COMPONENTS Gui Widgets Network REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS Gui Widgets Network)
 
 include_directories(include)
 
@@ -49,10 +49,13 @@ configure_file(config.h.in config.h) # Set config header file
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Gui Qt6::Widgets Qt6::Network)
 
+set(APPLICATION_NAME "WIC Server")
+
 set_target_properties(${PROJECT_NAME} PROPERTIES
-    OUTPUT_NAME "WIC Server"
+    OUTPUT_NAME ${APPLICATION_NAME}
     WIN32_EXECUTABLE TRUE
     MACOSX_BUNDLE TRUE
+    MACOSX_BUNDLE_BUNDLE_NAME ${APPLICATION_NAME}
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}
 )
