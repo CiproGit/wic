@@ -15,8 +15,6 @@ private:
 	Ui::Main_window *ui;
 	About about;
 
-	const QString ICON_FILE = ":/wic_client_icon.png";
-
 public:
 	Main_window(QWidget *parent = nullptr);
 	~Main_window();

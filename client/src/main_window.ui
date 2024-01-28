@@ -18,6 +18,10 @@
   <property name="windowTitle">
    <string>WIC Client</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../res/resources.qrc">
+    <normaloff>:/wic_client_icon.png</normaloff>:/wic_client_icon.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_7">
     <item>
@@ -122,6 +126,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../res/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
